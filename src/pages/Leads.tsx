@@ -5,6 +5,7 @@ import LeadColumn from "./LeadColumn";
 import { LuUser } from "react-icons/lu";
 import NewLeadModal from "../components/NewLeadModal";
 
+// Lead tipini barcha joylarda bir xil qilib qo'yamiz
 type Lead = {
   id: number;
   phone: string;
@@ -19,8 +20,6 @@ export default function Leads() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [confirmModal, setConfirmModal] = useState(false);
   const { data, isLoading } = useLeadListQuery({});
-  console.log(confirmModal);
-  
 
   const handleNewLead = () => setIsModalOpen(true);
   const handleConfirm = () => {
