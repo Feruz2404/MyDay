@@ -5,7 +5,6 @@ import LeadColumn from "./LeadColumn";
 import { LuUser } from "react-icons/lu";
 import NewLeadModal from "../components/NewLeadModal";
 
-// Lead tipini barcha joylarda bir xil qilib qo'yamiz
 type Lead = {
   id: number;
   phone: string;
@@ -67,6 +66,13 @@ export default function Leads() {
         onClose={() => setIsModalOpen(false)}
         onConfirm={handleConfirm}
       />
+
+      {/* Confirm modal */}
+      {confirmModal && (
+        <div className="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-md transition-opacity duration-300">
+          ✅ Lead successfully added!
+        </div>
+      )}
     </SidebarLayout>
   );
 }
